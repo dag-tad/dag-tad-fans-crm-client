@@ -1,6 +1,6 @@
 import { Button, Card } from 'antd'
-import React from 'react'
 import { Link } from 'react-router-dom'
+
 
 const UserDetail = ({ name, email, phoneNumber }: { name: string, email: string, phoneNumber: string }) => {
   return (

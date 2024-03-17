@@ -1,5 +1,5 @@
-import React, { CSSProperties, useEffect } from 'react';
-import { Button, Form, type FormProps, Input } from 'antd';
+import React, { CSSProperties } from 'react';
+import { Button, Form, Input } from 'antd';
 import { Link, useNavigate } from 'react-router-dom';
 import { UserContextValue, useUser } from '../../stores/UserProvider';
 
@@ -39,7 +39,7 @@ const AddUser: React.FC = () => {
         <Form.Item<FieldType>
             label="Full name"
             name="fullName"
-            rules={[{ required: true, message: 'Please input your email!' }]}
+            rules={[{ required: true, message: 'Please input your full name!' }]}
         >
             <Input placeholder='Full name' />
         </Form.Item>
@@ -53,7 +53,7 @@ const AddUser: React.FC = () => {
         <Form.Item<FieldType>
             label="Phone number"
             name="phoneNumber"
-            rules={[{ required: true, message: 'Please input your email!' }]}
+            rules={[{ required: true, message: 'Please input your phone number!' }]}
         >
             <Input placeholder='+251-911-111-111-11' />
         </Form.Item>

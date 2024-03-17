@@ -1,6 +1,6 @@
 import React, { ReactNode, useEffect } from 'react';
-import { Button, Layout } from 'antd'
-import { Link, Route, RouteObject, Routes, useNavigate } from 'react-router-dom';
+import { Layout } from 'antd'
+import { Route, RouteObject, Routes } from 'react-router-dom';
 
 import routes from './pages/routes';
 import { AuthContextValue, useAuth } from './stores/AuthProvider';
@@ -17,18 +17,12 @@ const layoutStyle: React.CSSProperties = {
 };
 function App() {
   const { userData, signout, getCurrentUser } = useAuth() as AuthContextValue;
-  const navigate = useNavigate();
 
   useEffect(() => {
     getCurrentUser();
   }, []);
 
   const renderWithLayout = (element: ReactNode): ReactNode => {
-    const _signout = () => {
-      signout();
-      navigate('/', {replace: true});
-    }
-
     return (
       <Layout>
         <FansCrmHeader name={userData?.name || ''} signout={signout} backgroundColor='#fff' textColor='#000'/>

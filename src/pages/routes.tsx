@@ -1,7 +1,6 @@
 import { RouteObject } from "react-router-dom";
 
 import SigninPage from "./SigninPage";
-import CreateUserPage from "./CreateUserPage";
 import UsersListPage from "./UsersListPage";
 import UserDetailPage from "./UserDetailPage";
 import SignupPage from "./SignupPage";
@@ -23,10 +22,6 @@ const routes: RouteObject[] = [
     {
         path: '/signup',
         element: <SignupPage />
-    },
-    {
-        path: '/create',
-        element: <CreateUserPage />
     },
     {
         path: '/list',

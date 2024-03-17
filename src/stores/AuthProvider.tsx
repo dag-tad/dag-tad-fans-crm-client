@@ -1,6 +1,7 @@
 import { createContext, useContext, useEffect, useState } from "react";
 import api from "../api/api";
 import { useMutation, useQuery } from "@tanstack/react-query";
+import { useNavigate } from "react-router";
 
 export interface IUserData {
     id: number,
@@ -27,6 +28,7 @@ export const useAuth = () => useContext(AuthContext);
 const AuthProvider = ({ children }: any) => {
     const [userData, setUserData] = useState<IUserData>()
     const [errorMessage, setErrorMessage] = useState<string | undefined>(undefined);
+    const navigate = useNavigate();
 
     const _getCurrentUser = () => {
         return api.get(`/me`, {
@@ -72,6 +74,7 @@ const AuthProvider = ({ children }: any) => {
 
     const signout = () => {
         localStorage.removeItem('token');
+        navigate('/');
         setUserData(undefined);
     }
 

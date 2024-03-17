@@ -25,9 +25,9 @@ function FansCrmHeader({name, signout, backgroundColor = 'white', textColor = 'b
       };
   return (
     <Header style={headerStyle}>
-          <Link to="/"><Logo /></Link>
+          <Link to="/" style={{marginTop: 20}}><Logo /></Link>
           <div style={{ display: 'flex', gap: 20 }}>
-            {name && <div style={{display: 'flex', alignItems: 'center', gap: 10, color: 'black'}}>
+            {name && <div style={{display: 'flex', alignItems: 'center', gap: 10, color: textColor}}>
               <div>Welcome</div> {name}
               <Button type="primary" size='large' onClick={signout}>Signout</Button>
               </div>}
