@@ -3,13 +3,41 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { BrowserRouter } from 'react-router-dom';
+import { ConfigProvider } from 'antd';
+import StoreProvider from './stores/StoreProvider';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+
+const queryClient = new QueryClient();
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
   <React.StrictMode>
-    <App />
+    <BrowserRouter>
+      <ConfigProvider
+        theme={{
+          token: {
+            colorPrimary: '#407BF2',
+            // colorBgContainer: '#fff',
+            // colorBorder: '#F5F5F5',
+          },
+          components: {
+            Layout: {
+              // colorBgHeader: "red",
+              colorBgBody: "#fff",
+            }
+          }
+        }}
+      >
+        <QueryClientProvider client={queryClient}>
+          <StoreProvider>
+            <App />
+          </StoreProvider>
+        </QueryClientProvider>
+      </ConfigProvider>
+    </BrowserRouter>
   </React.StrictMode>
 );
 
