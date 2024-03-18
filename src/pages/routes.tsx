@@ -5,6 +5,7 @@ import UsersListPage from "./UsersListPage";
 import UserDetailPage from "./UserDetailPage";
 import SignupPage from "./SignupPage";
 import AddUserPage from "./AddUserPage";
+import PageNotFoundPage from "./PageNotFoundPage";
 
 const routes: RouteObject[] = [
     {
@@ -30,6 +31,10 @@ const routes: RouteObject[] = [
     {
         path: '/detail/:id',
         element: <UserDetailPage />
+    },
+    {
+        path: '*',
+        element: <PageNotFoundPage />
     }
 ]
 

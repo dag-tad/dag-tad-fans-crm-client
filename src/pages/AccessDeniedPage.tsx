@@ -8,8 +8,8 @@ function AccessDeniedPage() {
   const navigate = useNavigate();
   
   return (
-    <Card title={'Error'} bordered={false} style={{ width: 400 }}>
-        <p>To access this page you have to signin first.</p>
+    <Card title={'Error'} bordered={false} style={{ width: 400, marginTop: 50 }}>
+        <h2>To access this page you have to signin first.</h2>
         <div style={{display: 'flex', justifyContent:'center', alignItems: 'center', gap: 10}}>
         <Button type="primary" size='large' onClick={() => navigate('/signin')}>Signin</Button>
         <div>Or</div>

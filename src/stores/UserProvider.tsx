@@ -90,7 +90,7 @@ const UserProvider = ({ children }: any) => {
     }, [newUserData]);
 
     useEffect(() => {
-        if (!addUserError) {
+        if (newUserData) {
             navigate('/list');
         }
     }, [newUserData]);
